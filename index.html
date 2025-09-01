@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Author's AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.16.0",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1"
+  }
+}
+</script>
+  <style>
+    /* Custom Theme for Genre Picker Mode */
+    .theme-pink .bg-gray-900 { background-color: #1e1b4b; } /* Indigo dye */
+    .theme-pink .bg-gray-800, .theme-pink .bg-gray-800\/50 { background-color: #312e81; } /* Dark indigo */
+    .theme-pink .bg-gray-700 { background-color: #4338ca; } /* Indigo */
+    .theme-pink .border-gray-700 { border-color: #4f46e5; } /* Indigo border */
+    .theme-pink .text-indigo-400 { color: #f5d0fe; } /* Plum */
+    .theme-pink .hover\:border-indigo-500:hover { border-color: #d8b4fe; } /* Purple hover */
+    .theme-pink .hover\:text-indigo-400:hover { color: #e9d5ff; }
+    .theme-pink .focus\:ring-indigo-500:focus { --tw-ring-color: #c084fc; }
+    .theme-pink .bg-indigo-600 { background-color: #a855f7; } /* Purple */
+    .theme-pink .hover\:bg-indigo-600:hover { background-color: #9333ea; }
+    .theme-pink .hover\:bg-indigo-700:hover { background-color: #9333ea; }
+    
+    /* Custom Theme for Summary Mode */
+    .theme-green .bg-gray-900 { background-color: #0d2a24; } /* Dark Teal */
+    .theme-green .bg-gray-800, .theme-green .bg-gray-800\/50 { background-color: #113c33; } /* Dark Green */
+    .theme-green .bg-gray-700 { background-color: #1a5e4f; } /* Medium Green */
+    .theme-green .border-gray-700 { border-color: #1d7b65; } /* Green Border */
+    .theme-green .text-indigo-400 { color: #6ee7b7; } /* Mint Green */
+    .theme-green .hover\:border-indigo-500:hover { border-color: #34d399; } /* Emerald hover */
+    .theme-green .hover\:text-indigo-400:hover { color: #a7f3d0; }
+    .theme-green .focus\:ring-indigo-500:focus { --tw-ring-color: #34d399; }
+    .theme-green .bg-indigo-600 { background-color: #10b981; } /* Emerald */
+    .theme-green .hover\:bg-indigo-600:hover { background-color: #059669; }
+    .theme-green .hover\:bg-indigo-700:hover { background-color: #047857; }
+
+    /* Custom Theme for Annotation Mode */
+    .theme-yellow .bg-gray-900 { background-color: #2a210d; } /* Dark Gold */
+    .theme-yellow .bg-gray-800, .theme-yellow .bg-gray-800\/50 { background-color: #423512; } /* Dark Yellow */
+    .theme-yellow .bg-gray-700 { background-color: #715a20; } /* Medium Yellow */
+    .theme-yellow .border-gray-700 { border-color: #856f2d; } /* Yellow Border */
+    .theme-yellow .text-indigo-400 { color: #facc15; } /* Yellow */
+    .theme-yellow .hover\:border-indigo-500:hover { border-color: #eab308; } /* Amber hover */
+    .theme-yellow .hover\:text-indigo-400:hover { color: #fde047; }
+    .theme-yellow .focus\:ring-indigo-500:focus { --tw-ring-color: #eab308; }
+    .theme-yellow .bg-indigo-600 { background-color: #d97706; } /* Amber */
+    .theme-yellow .hover\:bg-indigo-600:hover { background-color: #b45309; }
+    .theme-yellow .hover\:bg-indigo-700:hover { background-color: #92400e; }
+    
+    /* Nudge Animation */
+    @keyframes nudge-right {
+      0%, 100% { transform: translateX(0); }
+      25%, 75% { transform: translateX(4px); }
+      50% { transform: translateX(-2px); }
+    }
+    .animate-nudge {
+      animation: nudge-right 0.4s ease-in-out;
+    }
+  </style>
+</head>
+  <body class="bg-gray-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

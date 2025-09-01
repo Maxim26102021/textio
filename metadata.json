@@ -1,0 +1,5 @@
+{
+  "name": "Author's AI Assistant",
+  "description": "An AI-powered chatbot to help authors analyze their books. Upload your manuscript and get summaries, genre recommendations, and more.",
+  "requestFramePermissions": []
+}
